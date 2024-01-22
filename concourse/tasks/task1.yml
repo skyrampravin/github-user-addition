@@ -1,0 +1,22 @@
+platform: linux
+
+image_resource:
+    type: registry-image
+    source:
+        repository: ((GH_container_name))
+        tag: latest
+        username: ((registry-pull-username))
+        password: ((registry-pull-token))
+inputs:
+  - name: source-code
+run:
+  path: /bin/sh
+  args:
+    - -exc
+    - |
+       chmod +x github-user-addition/concourse/scripts/script1.sh
+       ./github-user-addition/concourse/scripts/script1.sh
+
+    
+    
+     

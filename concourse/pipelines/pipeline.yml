@@ -1,0 +1,21 @@
+---
+resource_types:
+  - name: metadata
+    type: registry-image
+    source:
+      repository: olhtbr/metadata-resource
+      tag: 2.0.1
+
+
+
+
+jobs:
+- name: Github-user-addition
+  serial: true 
+  plan:
+  - get: source-code
+    trigger: true
+
+  - task: add-user-to-group
+    file: github-user-addition/concourse/tasks/task1.yml
+            
