@@ -16,6 +16,6 @@ jobs:
   - get: source-code
     trigger: true
 
-  - task: add-user-to-group
+  - task: add-user-to-team
     file: github-user-addition/concourse/tasks/task1.yml
             

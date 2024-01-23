@@ -1,0 +1,22 @@
+---
+resources:
+  - name: prod-code
+    type: git
+    icon: github
+    check_every: 1m
+    source:
+      uri: https://github.com/skyrampravin/github-user-addition.git
+      branch: main
+      username: ((github_username))
+      password: ((github_pat))
+      disable_ci_skip: true
+
+jobs:
+  - name: configure-prod-pipeline
+    plan:
+      - get: prod-code
+        trigger: true
+      - set_pipeline: cec-github-user-addition
+        file: concourse/pipelines/pipeline.yml
+        var_files:
+          - concourse/pipelines/variables-prod.yml

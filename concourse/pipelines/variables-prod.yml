@@ -1,0 +1,12 @@
+# Your GitHub API token
+GITHUB_TOKEN="{{github-token}}"
+
+# GitHub organization and team information
+GITHUB_ORG="your-organization"
+GITHUB_TEAM="your-team"
+
+# Username of the user to be added to the team
+USER_TO_ADD="username-to-add"
+
+# GitHub API endpoint
+GITHUB_API="https://api.github.com"
